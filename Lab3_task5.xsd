@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="courses">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="course" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Application programming Java and XML technologies" />
+                                        <xs:enumeration value="Information System Analysis" />
+                                        <xs:enumeration value="Secure Systems and Networks" />
+                                        <xs:enumeration value="Advanced Databases" />
+                                        <xs:enumeration value="Multimedia and Computer Visualisation" />
+                                        <xs:enumeration value="Softcomputing" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="forms">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="form" minOccurs="1" maxOccurs="5">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="formName">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="Lecture" />
+                                                                <xs:enumeration value="Laboratory" />
+                                                                <xs:enumeration value="Project" />
+                                                                <xs:enumeration value="Execrices" />
+                                                                <xs:enumeration value="Seminar" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="hours" type="xs:string" />
+                                                    <xs:element name="lecturer" minOccurs="1" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="firstName" type="xs:string" />
+                                                                <xs:element name="lastName" type="xs:string" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+<!-- Author: Krzysztof Tomkow, index number: 218514 -->

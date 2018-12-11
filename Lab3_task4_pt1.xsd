@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="./Lab3_task4_pt2.xsd" />
+    <xs:element name="University">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" />
+                <xs:element name="description" type="xs:string" />
+                <xs:element name="yearOfEstablishment" type="xs:integer" />
+                <xs:element name="rector">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="firstName" type="xs:string" />
+                            <xs:element name="lastName" type="xs:string" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="faculties" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="faculty" type="facultyType" minOccurs="1" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+<!-- Author: Krzysztof Tomkow, index number: 218514 -->

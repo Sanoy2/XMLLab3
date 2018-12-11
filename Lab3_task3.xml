@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mobileDeviceType id="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="task3.xsd">
+    <access id="2" type="secure2.0" />
+    <access id="3" type="basic" value="min"/>
+    <access id="4" type="maximumSecure" value="max"/>
+    <inteface id="5" number="80" protocol="http" />
+    <inteface id="6" number="22" protocol="ftp" />
+    <os idRef="7" running="false"></os>
+    <sw idRef="8">
+        <config location="north" />
+    </sw>
+    <sw idRef="9">
+    </sw>
+</mobileDeviceType>
+
+<!-- Author: Krzysztof Tomkow, index number: 218514 -->

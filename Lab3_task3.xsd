@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="mobileDeviceType" type="physicalElementType" />
+    <xs:complexType name="physicalElementType">
+        <xs:sequence>
+            <xs:element name="access" type="accessType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="inteface" type="L1interface" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="os" type="osReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="sw" type="swReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer" use="required" />
+    </xs:complexType>
+    <xs:complexType name="accessType">
+        <xs:attributeGroup ref="accessTypeAttr" />
+    </xs:complexType>
+    <xs:complexType name="L1interface">
+        <xs:attributeGroup ref="L1interfaceAttr" />
+    </xs:complexType>
+    <xs:complexType name="osReferenceType">
+        <xs:sequence>
+            <xs:element name="config" type="configurationType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="osReferenceTypeAttr" />
+    </xs:complexType>
+    <xs:complexType name="swReferenceType">
+        <xs:sequence>
+            <xs:element name="config" type="configurationType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="swReferenceTypeAttr" />
+    </xs:complexType>
+    <xs:complexType name="configurationType">
+        <xs:attribute name="location" type="xs:string" />
+    </xs:complexType>
+    <xs:attributeGroup name="accessTypeAttr">
+        <xs:attribute name="id" type="xs:integer" use="required" />
+        <xs:attribute name="type" type="xs:string" use="required" />
+        <xs:attribute name="value" type="xs:string" />
+    </xs:attributeGroup>
+    <xs:attributeGroup name="L1interfaceAttr">
+        <xs:attribute name="id" type="xs:integer" use="required" />
+        <xs:attribute name="number" type="xs:integer" />
+        <xs:attribute name="technology" type="xs:string" />
+        <xs:attribute name="conector" type="xs:string" />
+        <xs:attribute name="protocol" type="xs:string" />
+    </xs:attributeGroup>
+    <xs:attributeGroup name="osReferenceTypeAttr">
+        <xs:attribute name="idRef" type="xs:integer" use="required" />
+        <xs:attribute name="running" type="xs:boolean" />
+    </xs:attributeGroup>
+    <xs:attributeGroup name="swReferenceTypeAttr">
+        <xs:attribute name="idRef" type="xs:integer" use="required" />
+        <xs:attribute name="running" type="xs:boolean" />
+    </xs:attributeGroup>
+</xs:schema>
+
+<!-- Author: Krzysztof Tomkow, index number: 218514 -->

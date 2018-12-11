@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="./Lab3_task4_pt3.xsd" />
+    <xs:complexType name="facultyType">
+        <xs:sequence>
+            <xs:element name="fullName" type="xs:string" />
+            <xs:element name="dean">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="firstName" type="xs:string" />
+                        <xs:element name="lastName" type="xs:string" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="majors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="major" type="majorType" minOccurs="1" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" />
+    </xs:complexType>
+</xs:schema>
+
+<!-- Author: Krzysztof Tomkow, index number: 218514 -->
